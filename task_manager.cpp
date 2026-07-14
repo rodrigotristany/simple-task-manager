@@ -23,11 +23,11 @@ void TaskManager::add_task(const std::string &title)
         return;
     }
 
-    tasks_.push_back(Task(
+    tasks_.push_back(Task{
         next_id_++,
         title,
         false,
-        current_time_string()));
+        current_time_string()});
 
     std::cout << "Task added successfully." << std::endl;
 }
@@ -190,7 +190,7 @@ void TaskManager::load_from_file(const std::filesystem::path &file_path)
     }
 }
 
-static void print_help()
+void TaskManager::print_help()
 {
     std::cout
         << "Commands: \n"
@@ -212,7 +212,8 @@ std::optional<std::reference_wrapper<Task>> TaskManager::find_task_by_id(int id)
     }
     return std::nullopt;
 }
-static std::optional<int> parse_int(std::string_view text)
+
+std::optional<int> TaskManager::parse_int(std::string_view text)
 {
     int value{};
     auto result = std::from_chars(text.data(), text.data() + text.size(), value);
@@ -220,7 +221,8 @@ static std::optional<int> parse_int(std::string_view text)
         return std::nullopt;
     return value;
 }
-static std::string current_time_string()
+
+std::string TaskManager::current_time_string()
 {
     using clock = std::chrono::system_clock;
     const auto now = clock::now();

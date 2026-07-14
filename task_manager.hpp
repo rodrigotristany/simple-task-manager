@@ -12,6 +12,7 @@
 class TaskManager
 {
 public:
+    TaskManager();
     void add_task(const std::string &title);
     void list_tasks() const;
     void mark_done(int id);
