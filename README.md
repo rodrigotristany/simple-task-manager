@@ -34,3 +34,16 @@ Where the first line is the next available ID; second line is the number of task
 ```bash
 > g++ -std=gnu++17 -Wall -Wextra -Wpedantic main.cpp task_manager.cpp task_manager.hpp task.hpp -o build/task_manager
 ```
+
+### How to use it (Fedora)
+After running the app, input 'help' to see the available commands:
+```
+Commands: 
+  add <title>       - Add a new task
+  list              - List all tasks
+  done <id>         - Mark a task as done
+  remove <id>       - Remove a task
+  find <keyword>    - Find tasks by keyword
+  help              - Show this help message
+  exit              - Exit the application
+```
