@@ -1,6 +1,6 @@
 #include <string>
 
-struct Task 
+struct Task
 {
     int id{};
     std::string title;
