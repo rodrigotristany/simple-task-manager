@@ -20,10 +20,10 @@ public:
     void save_to_file(const std::filesystem::path &file_path) const;
     void load_from_file(const std::filesystem::path &file_path);
     static void print_help();
+    static std::optional<int> parse_int(std::string_view text);
 
 private:
     std::optional<std::reference_wrapper<Task>> find_task_by_id(int id);
-    static std::optional<int> parse_int(std::string_view text);
     static std::string current_time_string();
 
 private:
