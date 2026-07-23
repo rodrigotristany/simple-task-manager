@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "task.hpp"
+#include "../task.hpp"
 
 class TaskPersistence
 {
@@ -16,7 +16,7 @@ public:
 class DatabasePersistence : public TaskPersistence
 {
 public:
-    DatabasePersistence(const std::string &dbPath) : path(dbPath) {}
+    DatabasePersistence(const std::string &dbPath);
     void save(std::vector<Task> tasks) const override;
     void load() override;
 
@@ -27,7 +27,7 @@ private:
 class FilePersistence : public TaskPersistence
 {
 public:
-    FilePersistence(const std::string &filePath) : path(filePath) {}
+    FilePersistence(const std::string &filePath);
     void save(std::vector<Task> tasks) const override;
     void load() override;
 
